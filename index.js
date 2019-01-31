@@ -7,6 +7,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 4000;
+const CONNECTION_URI = process.env.MONGODB_URI || 'mongodb://rishabh:jain1234@ds021989.mlab.com:21989/aqi_db';
 const app = express();
 app.use(cors());
 
@@ -29,7 +30,7 @@ if(process.env.NODE_ENV === 'production') {
 
 const cityname = ["delhi","jaipur","mumbai","hyderabad","pune","bengaluru","kolkata","ahmedabad"];
 
-mongoose.connect('mongodb://rishabh:jain1234@ds021989.mlab.com:21989/aqi_db', { useNewUrlParser: true });
+mongoose.connect(CONNECTION_URI, { useNewUrlParser: true });
 mongoose.connection.once('open',() =>{
     console.log("Connected to database");
 });
