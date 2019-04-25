@@ -72,6 +72,7 @@ cityname.forEach(function(CITY){
 app.get('/api/querydata', (req,res) =>{
  var CITYNAME = req.query.cityname;
  console.log(CITYNAME);
+ 
  AQI.find({city: CITYNAME},function(err,doc){
    var queriedData = [];
 
@@ -79,7 +80,22 @@ app.get('/api/querydata', (req,res) =>{
      queriedData[i] = value;
    });
    res.send(queriedData);
- })
+ }).sort({"time":-1});
+
 });
+
+app.get('/api/queryaqi', (req,res) =>{
+  var CITYNAME = req.query.cityname;
+  console.log(CITYNAME);
+  
+  AQI.find({city: CITYNAME},function(err,doc){
+    var queriedData = [];
+
+    doc.forEach(function(value,i){
+      queriedData[i] = value;
+    });
+    res.send(queriedData);
+  }).sort({"time":-1}).limit(1);
+ });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

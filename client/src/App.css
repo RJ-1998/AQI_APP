@@ -30,3 +30,12 @@
     transform: rotate(360deg);
   }
 }
+.form-div{
+  margin-top: 40px;
+}
+.card-div{
+  margin-top:40px;
+}
+.prediction-div{
+  margin-top:40px;
+}

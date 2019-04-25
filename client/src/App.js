@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Dashboard from './Components/Dashboard'
+import ViewData from './Components/ViewData'
+import DashBoard from './Components/DashBoard'
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
       <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={Dashboard}/>
+          <Route exact path="/" component={DashBoard}/>
+          <Route exact path="/view" component={ViewData}/>
         </Switch>        
       </div>
       </BrowserRouter>
