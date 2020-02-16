@@ -89,7 +89,7 @@ class DashBoard extends Component {
     }
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={{marginTop:"100px"}}>
       <h1 className="text-primary">House Pricing Prediction</h1>
         <div className="container-fluid">
         <div className="row">
